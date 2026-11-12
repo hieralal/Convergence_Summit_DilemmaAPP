@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The New Enterprise Equation — United Leaders Convergence Summit</title>
+<style>
+  :root{
+    --ink:#090b19;
+    --ink-2:#12162b;
+    --ink-3:#1b2140;
+    --line:#e2e7f1;
+    --mist:#f4f6fb;
+    --white:#ffffff;
+    --accent:#e2e7f1;
+    --muted:#8b93ad;
+    --soft:#d7ddea;
+    --radius:18px;
+    --c-general:#8bb4ff;
+    --c-overview:#f0abfc;
+    --c-dim:#a78bfa;
+    --c-cio:#5eead4;
+    --c-ciso:#fca5a5;
+    --c-finance:#fcd34d;
+    --c-arch:#93c5fd;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:Inter,'Segoe UI',system-ui,-apple-system,sans-serif;
+    background:var(--ink);
+    color:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(9,11,25,.92);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(226,231,241,.14);
+  }
+  .bar{display:flex;align-items:center;gap:28px;height:68px}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:11px;white-space:nowrap}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--line);box-shadow:0 0 0 4px rgba(226,231,241,.12)}
+  .brand small{display:block;font-weight:400;letter-spacing:.06em;color:var(--muted);text-transform:none;font-size:10px;margin-top:2px}
+  nav.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin-left:auto}
+  nav.tabs::-webkit-scrollbar{display:none}
+  nav.tabs button{
+    font:inherit;font-size:12.5px;font-weight:500;letter-spacing:.02em;
+    color:var(--muted);background:transparent;border:0;cursor:pointer;
+    padding:9px 14px;border-radius:10px;white-space:nowrap;transition:.18s;
+  }
+  nav.tabs button:hover{color:var(--white);background:rgba(226,231,241,.07)}
+  nav.tabs button[data-tab="assessment"]{padding:9px 20px;min-width:132px}
+  nav.tabs button[aria-selected="true"]{color:var(--ink);background:var(--tab-c,var(--line));font-weight:600;box-shadow:0 0 0 1px color-mix(in srgb,var(--tab-c,var(--line)) 60%,transparent),0 6px 18px -8px var(--tab-c,var(--line))}
+  nav.tabs button[data-tab="general"]{--tab-c:var(--c-general)}
+  nav.tabs button[data-tab="overview"]{--tab-c:var(--c-overview)}
+  nav.tabs button[data-tab="dimensions"]{--tab-c:var(--c-dim)}
+  nav.tabs button[data-tab="cio"]{--tab-c:var(--c-cio)}
+  nav.tabs button[data-tab="ciso"]{--tab-c:var(--c-ciso)}
+  nav.tabs button[data-tab="finance"]{--tab-c:var(--c-finance)}
+  nav.tabs button[data-tab="architecture"]{--tab-c:var(--c-arch)}
+  nav.tabs button[data-tab="assessment"]{--tab-c:var(--c-overview)}
+  nav.tabs button:hover{color:var(--tab-c,var(--white))}
+  .panel#general{--tab-c:var(--c-general)}
+  .panel#overview{--tab-c:var(--c-overview)}
+  .panel#dimensions{--tab-c:var(--c-dim)}
+  .panel#cio{--tab-c:var(--c-cio)}
+  .panel#ciso{--tab-c:var(--c-ciso)}
+  .panel#finance{--tab-c:var(--c-finance)}
+  .panel#architecture{--tab-c:var(--c-arch)}
+  .panel#assessment{--tab-c:var(--c-overview)}
+  .panel .card{border-top:2px solid color-mix(in srgb,var(--tab-c,var(--line)) 45%,transparent)}
+  .panel .card.light{border-top-color:var(--tab-c,var(--line))}
+  .panel .card .num{color:var(--tab-c,var(--muted))}
+  .panel .divider{background:linear-gradient(90deg,color-mix(in srgb,var(--tab-c,var(--line)) 55%,transparent),rgba(226,231,241,.08))}
+  .panel h3{color:color-mix(in srgb,var(--tab-c,#ffffff) 28%,#ffffff)}
+  .panel .quote{border-left-color:var(--tab-c,var(--line))}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    padding:76px 0 64px;
+    border-bottom:1px solid rgba(226,231,241,.14);
+    background:
+      radial-gradient(900px 420px at 82% -10%,rgba(226,231,241,.16),transparent 62%),
+      radial-gradient(700px 380px at 4% 110%,rgba(226,231,241,.09),transparent 60%),
+      var(--ink);
+  }
+  .kicker{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:26px}
+  .pill{
+    font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
+    border:1px solid rgba(226,231,241,.34);border-radius:999px;padding:6px 13px;color:var(--line);
+  }
+  .pill.solid{background:var(--line);color:var(--ink)}
+  h1{font-size:clamp(34px,5.4vw,62px);line-height:1.04;letter-spacing:-.03em;font-weight:700;max-width:16ch}
+  h1 em{font-style:normal;color:var(--muted)}
+  .lede{font-size:clamp(16px,1.6vw,19px);color:var(--soft);max-width:62ch;margin-top:22px}
+  .equation{
+    display:flex;flex-wrap:wrap;align-items:center;gap:12px;
+    margin-top:38px;font-size:clamp(15px,1.7vw,19px);font-weight:600;letter-spacing:.01em;
+  }
+  .equation .op{color:var(--muted);font-weight:400}
+  .equation .term{border:1px solid rgba(226,231,241,.3);padding:8px 16px;border-radius:12px;background:rgba(226,231,241,.05)}
+  .equation .term.hl{background:var(--line);color:var(--ink);border-color:var(--line)}
+  .meta{display:flex;flex-wrap:wrap;gap:26px;margin-top:40px;font-size:12.5px;color:var(--muted);letter-spacing:.04em}
+  .meta b{display:block;color:var(--white);font-weight:600;letter-spacing:0;font-size:13.5px;margin-top:3px}
+
+  /* ---------- panels ---------- */
+  main{padding:56px 0 96px}
+  .panel{display:none;animation:rise .35s ease}
+  .panel.active{display:block}
+  @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .panel-head{margin-bottom:22px;max-width:74ch;padding:14px 18px;border-radius:14px;border-left:3px solid var(--tab-c,var(--line));background:linear-gradient(90deg,color-mix(in srgb,var(--tab-c,#e2e7f1) 14%,transparent),transparent 70%)}
+  .panel-head .eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--tab-c,var(--muted));font-weight:700}
+  h2{font-size:clamp(20px,2.3vw,27px);line-height:1.18;letter-spacing:-.02em;margin:6px 0 8px;font-weight:700}
+  .panel-head p{color:var(--soft);font-size:14px;line-height:1.5}
+  .hero-mini{display:none;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .hero-mini .mini-title{font-size:13px;font-weight:700;letter-spacing:-.01em}
+  .hero-mini .mini-eq{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+  body.compact .hero{padding:14px 0 16px}
+  body.compact .hero-full{display:none}
+  body.compact .hero-mini{display:flex}
+  body.compact .equation{display:none}
+  body.compact main{padding:20px 0 56px}
+  body.compact .panel-head{margin-bottom:14px;padding:10px 14px}
+  body.compact .panel-head h2{font-size:clamp(17px,1.8vw,21px);margin:3px 0 4px}
+  body.compact .panel-head p{font-size:12.5px;line-height:1.45}
+  body.compact .panel-head .eyebrow{font-size:9px}
+  h3{font-size:17px;letter-spacing:-.01em;margin-bottom:12px;font-weight:650}
+  .grid{display:grid;gap:18px}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .card{
+    background:linear-gradient(180deg,rgba(226,231,241,.07),rgba(226,231,241,.03));
+    border:1px solid rgba(226,231,241,.16);
+    border-radius:var(--radius);padding:24px;
+  }
+  .card.flat{background:var(--ink-2)}
+  .card.light{background:var(--line);color:var(--ink);border-color:var(--line)}
+  .card.light,.card.light p,.card.light li,.card.light h3,.card.light b,.card.light strong{color:#1a2038}
+  .card.light .num{color:#4a5273}
+  .card.light .tag{background:rgba(9,11,25,.08);border-color:rgba(9,11,25,.3);color:#1a2038}
+  .card.light a{color:#1a2038;text-decoration:underline}
+  .card.tension{background:rgba(252,165,165,.09);border-color:rgba(252,165,165,.38);border-top-color:#fca5a5}
+  .card.tension .num{color:#fca5a5}
+  .card.tension h3{color:#ffd6d6}
+  .card.leverage{background:rgba(94,234,212,.09);border-color:rgba(94,234,212,.38);border-top-color:#5eead4}
+  .card.leverage .num{color:#5eead4}
+  .card.leverage h3{color:#ccfbf1}
+  .card p{font-size:14.5px;color:var(--soft)}
+  .card ul{margin:10px 0 0 18px;font-size:14px;color:var(--soft)}
+  .card li{margin:6px 0}
+  .num{font-size:11px;letter-spacing:.18em;color:var(--muted);font-weight:700;text-transform:uppercase}
+  .card h3{margin-top:8px}
+  .quote{
+    border-left:2px solid var(--line);padding:6px 0 6px 20px;margin:22px 0;
+    font-size:clamp(17px,2.1vw,23px);line-height:1.4;letter-spacing:-.015em;font-weight:500;
+  }
+  .quote span{color:var(--muted)}
+  .tag{display:inline-block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;border:1px solid rgba(226,231,241,.3);border-radius:999px;padding:4px 10px;margin:0 6px 8px 0;color:var(--line)}
+  .tag.on{background:var(--line);color:var(--ink)}
+  .split{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}
+  @media(max-width:900px){.split{grid-template-columns:1fr}.bar{height:auto;padding:12px 0;flex-wrap:wrap}nav.tabs{margin-left:0;width:100%}}
+  .divider{height:1px;background:rgba(226,231,241,.14);margin:44px 0}
+  .footnote{font-size:12px;color:var(--muted);margin-top:18px}
+
+  /* ---------- overview: equation, dimensions, equations, perspectives ---------- */
+  .eqstage{
+    position:relative;overflow:hidden;border-radius:24px;padding:34px 28px;
+    border:1px solid rgba(240,171,252,.28);
+    background:
+      radial-gradient(600px 300px at 15% 0%,rgba(139,180,255,.18),transparent 60%),
+      radial-gradient(600px 300px at 85% 100%,rgba(94,234,212,.16),transparent 60%),
+      linear-gradient(180deg,rgba(240,171,252,.1),rgba(9,11,25,.6));
+  }
+  .eqstage .eq-intro{max-width:62ch;font-size:14.5px;color:var(--soft);margin-bottom:26px}
+  .eqrow{display:flex;flex-wrap:wrap;align-items:stretch;gap:14px;justify-content:center}
+  .eqterm{
+    flex:1 1 170px;min-width:150px;max-width:230px;padding:20px 18px;border-radius:18px;text-align:center;
+    background:rgba(9,11,25,.55);border:1px solid rgba(226,231,241,.2);transition:.22s;
+  }
+  .eqterm .t-icon{font-size:22px;line-height:1;display:block;margin-bottom:10px}
+  .eqterm .t-name{font-size:16px;font-weight:700;letter-spacing:-.01em;display:block}
+  .eqterm .t-sub{font-size:12px;color:var(--muted);display:block;margin-top:6px;line-height:1.4}
+  .eqterm.v{border-color:rgba(139,180,255,.5);box-shadow:inset 0 0 40px rgba(139,180,255,.12)}
+  .eqterm.s{border-color:rgba(252,211,77,.5);box-shadow:inset 0 0 40px rgba(252,211,77,.1)}
+  .eqterm.c{border-color:rgba(94,234,212,.5);box-shadow:inset 0 0 40px rgba(94,234,212,.1)}
+  .eqop{display:grid;place-items:center;font-size:24px;font-weight:300;color:rgba(240,171,252,.85);min-width:20px}
+  .eqresult{
+    flex:1 1 230px;max-width:300px;padding:20px 18px;border-radius:18px;text-align:center;
+    background:linear-gradient(140deg,#f0abfc,#8bb4ff 55%,#5eead4);color:var(--ink);
+    display:flex;flex-direction:column;justify-content:center;
+  }
+  .eqresult .r-kicker{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;opacity:.7}
+  .eqresult .r-name{font-size:17px;font-weight:800;letter-spacing:-.02em;line-height:1.2;margin-top:6px}
+  .eqresult .r-sub{font-size:11.5px;font-weight:600;opacity:.75;margin-top:6px}
+  .eqinsight{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:26px;
+  }
+  .eqinsight div{padding:14px 16px;border-radius:14px;background:rgba(9,11,25,.5);border:1px solid rgba(226,231,241,.14);font-size:13px;color:var(--soft)}
+  .eqinsight b{display:block;color:var(--white);font-size:12.5px;margin-bottom:3px}
+
+  .vcard{position:relative;overflow:hidden;padding:22px;border-radius:18px;border:1px solid rgba(226,231,241,.16);background:rgba(9,11,25,.45)}
+  .vcard .v-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .vcard .v-ring{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:13px;flex:none}
+  .vcard h4{font-size:15.5px;font-weight:700;margin:0;color:var(--white)}
+  .vcard .v-sub{font-size:12px;color:var(--muted);margin-top:2px}
+  .vcard p{font-size:13.5px;color:var(--soft)}
+  .vcard .v-bar{height:6px;border-radius:4px;background:rgba(226,231,241,.12);margin-top:14px;overflow:hidden}
+  .vcard .v-bar i{display:block;height:100%;border-radius:4px}
+  .vcard .v-scale{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+
+  .holo{
+    position:relative;border-radius:26px;padding:34px 26px 30px;overflow:hidden;
+    background:
+      radial-gradient(circle at 50% 46%,rgba(240,171,252,.16),transparent 55%),
+      radial-gradient(circle at 12% 88%,rgba(139,180,255,.16),transparent 50%),
+      radial-gradient(circle at 88% 12%,rgba(94,234,212,.14),transparent 50%),
+      linear-gradient(180deg,#0b0e20,#12162b);
+    border:1px solid rgba(240,171,252,.25);
+  }
+  .holo::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:repeating-linear-gradient(0deg,rgba(240,171,252,.05) 0 1px,transparent 1px 4px);
+    mix-blend-mode:screen;
+  }
+  .holo-grid{display:grid;grid-template-columns:1fr 260px 1fr;gap:18px;align-items:center}
+  .holo-core{
+    position:relative;width:200px;height:200px;margin:0 auto;border-radius:50%;
+    display:grid;place-items:center;text-align:center;padding:16px;
+    border:1px solid rgba(240,171,252,.6);
+    background:radial-gradient(circle,rgba(240,171,252,.28),rgba(9,11,25,.9) 70%);
+    box-shadow:0 0 0 12px rgba(240,171,252,.06),0 0 60px rgba(240,171,252,.25);
+    animation:holoPulse 6s ease-in-out infinite;
+  }
+  @keyframes holoPulse{0%,100%{box-shadow:0 0 0 12px rgba(240,171,252,.05),0 0 50px rgba(240,171,252,.2)}50%{box-shadow:0 0 0 22px rgba(240,171,252,.03),0 0 80px rgba(240,171,252,.34)}}
+  .holo-core .c-kicker{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,171,252,.9);font-weight:800}
+  .holo-core .c-title{font-size:15px;font-weight:800;line-height:1.2;color:var(--white);margin-top:6px}
+  .holo-core .c-sub{font-size:10.5px;color:var(--muted);margin-top:6px}
+  .holo-col{display:grid;gap:14px}
+  .persp{
+    display:block;width:100%;text-align:left;cursor:pointer;font:inherit;color:inherit;
+    padding:15px 16px;border-radius:16px;background:rgba(9,11,25,.62);
+    border:1px solid rgba(226,231,241,.16);transition:.22s;
+  }
+  .persp:hover{transform:translateY(-2px);border-color:var(--p-c)}
+  .persp[aria-pressed="true"]{border-color:var(--p-c);background:rgba(9,11,25,.85);box-shadow:0 0 0 1px var(--p-c),0 12px 30px -14px var(--p-c)}
+  .persp .p-head{display:flex;align-items:center;gap:10px}
+  .persp .p-dot{width:10px;height:10px;border-radius:50%;background:var(--p-c);box-shadow:0 0 10px var(--p-c);flex:none}
+  .persp .p-name{font-size:13px;font-weight:700;letter-spacing:.01em;color:var(--white)}
+  .persp .p-role{font-size:11px;color:var(--muted);margin-top:3px;display:block}
+  .persp .p-read{margin-top:10px;font-size:12.5px;color:var(--soft);line-height:1.45;display:none}
+  .persp[aria-pressed="true"] .p-read{display:block}
+  .holo-legend{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:24px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .holo-legend span{display:flex;align-items:center;gap:7px}
+  .holo-legend i{width:9px;height:9px;border-radius:50%;display:block}
+  .holo-note{margin-top:20px;font-size:13.5px;color:var(--soft);text-align:center;max-width:70ch;margin-left:auto;margin-right:auto}
+  @media(max-width:900px){
+    .holo-grid{grid-template-columns:1fr}
+    .holo-core{width:170px;height:170px}
+  }
+
+  /* ---------- assessment ---------- */
+  .assess-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+  .disc{
+    border:1px solid rgba(226,231,241,.16);border-radius:18px;padding:20px;
+    background:linear-gradient(180deg,rgba(226,231,241,.06),rgba(226,231,241,.02));
+    border-top:3px solid var(--d-c);
+  }
+  .disc .d-head{display:flex;align-items:center;gap:11px;margin-bottom:4px}
+  .disc .d-ic{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;font-size:16px;flex:none;background:color-mix(in srgb,var(--d-c) 20%,transparent);border:1px solid color-mix(in srgb,var(--d-c) 55%,transparent)}
+  .disc h4{font-size:15px;font-weight:700;color:var(--white);margin:0}
+  .disc .d-sub{font-size:11.5px;color:var(--muted);display:block;margin-top:2px}
+  .disc .d-score{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-left:auto;text-align:right}
+  .disc .d-score b{display:block;font-size:15px;letter-spacing:0;color:var(--d-c)}
+  .q{border-top:1px solid rgba(226,231,241,.1);padding:13px 0 0;margin-top:13px}
+  .q-txt{font-size:13px;color:var(--soft);line-height:1.45;margin-bottom:9px;display:block}
+  .q-txt .q-n{color:var(--d-c);font-weight:700;margin-right:5px}
+  .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+  .opts label{
+    cursor:pointer;font-size:11px;font-weight:600;text-align:center;padding:7px 4px;border-radius:9px;
+    border:1px solid rgba(226,231,241,.2);color:var(--muted);transition:.16s;line-height:1.25;
+  }
+  .opts input{position:absolute;opacity:0;pointer-events:none}
+  .opts label:hover{color:var(--white);border-color:color-mix(in srgb,var(--d-c) 50%,transparent)}
+  .opts input:checked+label{background:var(--d-c);border-color:var(--d-c);color:var(--ink);font-weight:700}
+  .opts input:focus-visible+label{outline:2px solid var(--d-c);outline-offset:2px}
+
+  .result{
+    margin-top:26px;border-radius:22px;padding:26px;border:1px solid rgba(240,171,252,.3);
+    background:radial-gradient(600px 260px at 10% 0%,rgba(240,171,252,.14),transparent 60%),linear-gradient(180deg,rgba(226,231,241,.06),rgba(9,11,25,.5));
+  }
+  .result .r-top{display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between;margin-bottom:22px}
+  .result .r-title{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-overview);font-weight:800}
+  .result .r-big{font-size:clamp(34px,5vw,50px);font-weight:800;letter-spacing:-.03em;line-height:1;margin-top:6px;color:var(--white)}
+  .result .r-big small{font-size:16px;font-weight:600;color:var(--muted);letter-spacing:0;margin-left:6px}
+  .result .r-band{display:inline-block;margin-top:10px;padding:5px 13px;border-radius:999px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--line);color:var(--ink)}
+  .bars{display:grid;gap:12px;flex:1 1 320px;min-width:260px}
+  .bar-row{display:grid;grid-template-columns:118px 1fr 52px;gap:12px;align-items:center;font-size:12px}
+  .bar-row .bl{color:var(--soft);font-weight:600}
+  .bar-row .bt{height:9px;border-radius:5px;background:rgba(226,231,241,.12);overflow:hidden}
+  .bar-row .bt i{display:block;height:100%;border-radius:5px;transition:width .45s ease;background:var(--b-c)}
+  .bar-row .bv{text-align:right;font-weight:700;color:var(--b-c);font-variant-numeric:tabular-nums}
+  .start{
+    margin-top:20px;padding:18px 20px;border-radius:16px;background:rgba(9,11,25,.55);
+    border:1px solid rgba(240,171,252,.3);
+  }
+  .start .s-kicker{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--c-overview)}
+  .start h4{font-size:16.5px;margin:6px 0 8px;color:#fbe4fe}
+  .start p{font-size:14px;color:var(--soft)}
+  .start .s-next{margin-top:12px;font-size:12.5px;color:var(--muted)}
+  .assess-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .assess-actions button{
+    font:inherit;font-size:12.5px;font-weight:600;cursor:pointer;padding:10px 18px;border-radius:11px;
+    background:transparent;border:1px solid rgba(240,171,252,.45);color:#fbe4fe;transition:.18s;
+  }
+  .assess-actions button:hover{background:rgba(240,171,252,.14)}
+  .assess-actions button.primary{background:var(--c-overview);border-color:var(--c-overview);color:var(--ink)}
+  .assess-actions button.primary:hover{filter:brightness(1.08)}
+  @media print{header{position:static}.panel{display:block!important;page-break-before:always}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <div class="brand">
+      <span class="dot"></span>
+      <span>United Leaders<small>Convergence Summit · Amsterdam</small></span>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Sections">
+      <button role="tab" data-tab="general" aria-selected="true">General</button>
+      <button role="tab" data-tab="overview" aria-selected="false">Overview</button>
+      <button role="tab" data-tab="dimensions" aria-selected="false">4 Dimensions × 3 Equations</button>
+      <button role="tab" data-tab="cio" aria-selected="false">CIO · Digitalisation</button>
+      <button role="tab" data-tab="ciso" aria-selected="false">CISO · Security</button>
+      <button role="tab" data-tab="finance" aria-selected="false">Finance</button>
+      <button role="tab" data-tab="architecture" aria-selected="false">Architecture</button>
+      <button role="tab" data-tab="assessment" aria-selected="false">Assessment</button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div class="hero-full">
+      <div class="kicker">
+        <span class="pill">Executive Panel Briefing</span>
+        <span class="pill solid">12 November 2026</span>
+        <span class="pill">Sofitel Legend The Grand Amsterdam</span>
+      </div>
+      <h1>The New Enterprise Equation <em>— the dilemma</em></h1>
+      <p class="lede">Transforming for growth without losing resilience, control or value. A 45-minute cross-functional conversation between IT, Security, Finance and Architecture — and the one question they cannot answer separately.</p>
+    </div>
+    <div class="hero-mini">
+      <span class="mini-title">The New Enterprise Equation</span>
+      <span class="mini-eq">Value × Speed × Control</span>
+    </div>
+
+    <div class="equation" aria-label="The enterprise equation">
+      <span class="term">Value</span><span class="op">×</span>
+      <span class="term">Speed</span><span class="op">×</span>
+      <span class="term">Control</span><span class="op">=</span>
+      <span class="term hl">Enterprise Equation</span>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <!-- ================= GENERAL ================= -->
+  <section class="panel active" id="general" role="tabpanel">
+    <div class="panel-head">
+      <div class="eyebrow">Tab 01 · The dilemma</div>
+      <h2>Three forces, one budget, one accountable leader</h2>
+      <p>This app is a working instrument for the dilemma at the heart of the United Leaders Convergence Summit: organisations are asked to create more value and move faster, while remaining resilient and in control — with the same money, the same people and the same legacy.</p>
+    </div>
+
+    <div class="quote">Can organisations create <span>more value</span>, move <span>faster</span> and remain competitive — without losing <span>resilience, control</span> or the <span>freedom to adapt</span>?</div>
+
+    <div class="grid g3">
+      <div class="card">
+        <div class="num">Force 1</div>
+        <h3>Value</h3>
+        <p>Growth, measurable productivity and genuine reinvention — not another tool layered on existing work.</p>
+      </div>
+      <div class="card">
+        <div class="num">Force 2</div>
+        <h3>Speed</h3>
+        <p>Time-to-value, competitive clock speed and the ability to adopt AI before the window closes.</p>
+      </div>
+      <div class="card">
+        <div class="num">Force 3</div>
+        <h3>Control</h3>
+        <p>Resilience, regulatory compliance, data protection and sovereignty over critical dependencies.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="split">
+      <div>
+        <h3>Why it is a dilemma, not a trade-off</h3>
+        <p style="color:var(--soft);font-size:15px">A trade-off has a right answer once you know the constraints. This dilemma does not: the three forces are funded from the same envelope, owned by different executives with different accountability, and measured on different clocks. The panel's premise is that the answer is <b>architectural</b> — deciding deliberately where speed belongs, where control is non-negotiable, and where value is actually created — rather than financial, where the loudest voice wins.</p>
+        <ul style="margin:16px 0 0 18px;color:var(--soft);font-size:14.5px">
+          <li><b>Private vs public:</b> universities and public institutions carry continuity of essential services and societal dependencies that shape what is possible.</li>
+          <li><b>Inside vs outside:</b> disruption increasingly starts beyond the enterprise boundary — third parties, infrastructure, geopolitics.</li>
+          <li><b>Now vs later:</b> resilience investment pays off in a disruption that may never occur.</li>
+        </ul>
+      </div>
+      <div class="card light">
+        <div class="num">The four perspectives in this app</div>
+        <h3>One equation, four seats at the table</h3>
+        <ul>
+          <li><b>CIO / Digitalisation</b> — where to accelerate, what to simplify</li>
+          <li><b>CISO / Security</b> — what must never fail, who may stop</li>
+          <li><b>Finance</b> — how to fund both innovation and preparedness</li>
+          <li><b>Architecture</b> — the third option between speed and "no"</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3>The three equations</h3>
+    <div class="grid g3" style="margin-top:14px">
+      <div class="card flat">
+        <div class="num">I</div>
+        <h3>The Transformation Equation</h3>
+        <p>Where should organisations accelerate — and where are legacy complexity, regulatory obligations and limited resources slowing them down?</p>
+      </div>
+      <div class="card flat">
+        <div class="num">II</div>
+        <h3>The Resilience Equation</h3>
+        <p>What happens when the systems an organisation depends on fail — even if its own IT is still running?</p>
+      </div>
+      <div class="card flat">
+        <div class="num">III</div>
+        <h3>The Leadership Equation</h3>
+        <p>Who owns the trade-off when value, speed and control point in different directions?</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="split">
+      <div>
+        <h3>About this app</h3>
+        <p style="color:var(--soft);font-size:15px">This interactive briefing was created for the <b>United Leaders Convergence Summit</b> (12 November 2026, Amsterdam) as a companion to the cross-functional executive panel <i>"The New Enterprise Equation"</i>. It was <b>created by Dennis Hieralal</b> (Lead Architect, Erasmus University) <b>in cooperation with Dennis Torrepalma</b> (United Leaders).</p>
+        <p style="color:var(--soft);font-size:15px;margin-top:12px">The app is deliberately not a slide deck. It is a thinking instrument: each tab holds one perspective on the same dilemma, so the conversation can move between them without losing the thread. Nothing here is confidential — all examples are generic or public.</p>
+      </div>
+      <div class="card">
+        <div class="num">How to use it</div>
+        <h3>Four moves</h3>
+        <ul>
+          <li><b>Start here</b> — frame the dilemma, not the solution</li>
+          <li><b>Align</b> — put the 4 dimensions against the 3 equations</li>
+          <li><b>Step into a seat</b> — read one perspective at a time</li>
+          <li><b>Close</b> — one decision for the next 90 days</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="card" style="border-color:rgba(240,171,252,.35);background:linear-gradient(180deg,rgba(240,171,252,.1),rgba(240,171,252,.03))">
+      <div class="num" style="color:var(--c-overview)">Tab 07 · Self-assessment</div>
+      <h3 style="color:#fbe4fe">Where does your own organisation stand?</h3>
+      <p style="font-size:14.5px">The last tab turns the equation into a quick diagnostic. Four disciplines — <b>Technology, Business, Finance and Risk</b> — each get five simple questions, answered on a three-point scale (<i>Not yet · Partly · In place</i>). It takes about five minutes.</p>
+      <p style="font-size:14.5px;margin-top:10px">As you answer, the app calculates a <b>maturity score per discipline</b> (0–100%) and an <b>overall maturity score</b> with a band — <i>Exposed, Emerging, Developing or Leading</i>. It then points you to <b>where to start</b>: the lowest-scoring discipline, which is most likely the constraint on the whole equation, plus the first concrete move and the strength to build on.</p>
+      <p style="font-size:14.5px;margin-top:10px">It is a conversation instrument, not an audit — its value is in showing where the four seats rate their own organisation differently, and in giving the panel a shared starting point for the 90-day decision.</p>
+      <div class="assess-actions" style="margin-top:16px">
+        <button class="primary" id="gotoAssessment">Open the assessment →</button>
+      </div>
+    </div>
+
+    <p class="footnote"><b>Created by Dennis Hieralal</b> (Lead Architect, Erasmus University) in cooperation with Dennis Torrepalma (United Leaders). Sources: United Leaders Convergence Summit programme (12 Nov 2026) · participant briefing "The New Enterprise Equation" · Dennis Hieralal architecture practice · open public sources.</p>
+  </section>
+
+  <!-- ================= OVERVIEW ================= -->
+  <section class="panel" id="overview" role="tabpanel">
+    <div class="panel-head">
+      <div class="eyebrow">Tab 02 · The whole picture</div>
+      <h2>The New Enterprise Equation, in one view</h2>
+      <p>What the equation means, how the four dimensions behave under the three equations, and how the four perspectives together see the same dilemma. Read it as a map — then take it into your own organisation.</p>
+    </div>
+
+    <!-- 1 · the equation -->
+    <div class="eqstage">
+      <div class="eq-intro"><b style="color:var(--white)">The equation.</b> Enterprise value is not the sum of its parts — it is their product. Value, Speed and Control multiply. When one of them approaches zero, the whole result collapses, no matter how strong the others are. That is why this is a dilemma: you cannot buy your way out of one factor with the other two.</div>
+      <div class="eqrow">
+        <div class="eqterm v">
+          <span class="t-icon">◆</span>
+          <span class="t-name">Value</span>
+          <span class="t-sub">Growth, productivity, genuine reinvention</span>
+        </div>
+        <div class="eqop">×</div>
+        <div class="eqterm s">
+          <span class="t-icon">⚡</span>
+          <span class="t-name">Speed</span>
+          <span class="t-sub">Time-to-value, clock speed, adoption</span>
+        </div>
+        <div class="eqop">×</div>
+        <div class="eqterm c">
+          <span class="t-icon">◎</span>
+          <span class="t-name">Control</span>
+          <span class="t-sub">Resilience, compliance, sovereignty</span>
+        </div>
+        <div class="eqop">=</div>
+        <div class="eqresult">
+          <span class="r-kicker">Outcome</span>
+          <span class="r-name">Enterprise Equation</span>
+          <span class="r-sub">Value × Speed × Control</span>
+        </div>
+      </div>
+      <div class="eqinsight">
+        <div><b>Multiplicative, not additive</b>Zero in one factor zeroes the outcome. A fast, cheap failure is worth nothing; a perfectly controlled organisation that never moves is worth nothing either.</div>
+        <div><b>Different clocks</b>Value is asked for quarterly, control annually, resilience over years. One budget cycle cannot hold all three without explicit rules.</div>
+        <div><b>The architectural answer</b>Instead of trading one factor for another, redesign the dependency that forces the choice — so the factors stop competing.</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 2 · four dimensions -->
+    <h3>The four dimensions</h3>
+    <p style="color:var(--muted);font-size:13.5px;margin-bottom:16px">The same four dimensions recur in every equation. Only the question changes.</p>
+    <div class="grid g2">
+      <div class="vcard">
+        <div class="v-top">
+          <div class="v-ring" style="background:rgba(139,180,255,.18);border:1px solid rgba(139,180,255,.6);color:#bfd4ff">V</div>
+          <div><h4>Value</h4><div class="v-sub">What someone would pay for — or what society depends on</div></div>
+        </div>
+        <p>Does the change alter how work is done, or only how it is recorded? Value claims must be testable before funding.</p>
+        <div class="v-bar"><i style="width:85%;background:linear-gradient(90deg,#8bb4ff,#c7d9ff)"></i></div>
+        <div class="v-scale"><span>Tangible</span><span>Quarterly clock</span></div>
+      </div>
+      <div class="vcard">
+        <div class="v-top">
+          <div class="v-ring" style="background:rgba(252,211,77,.18);border:1px solid rgba(252,211,77,.6);color:#fde68a">S</div>
+          <div><h4>Speed</h4><div class="v-sub">Time-to-value, decision latency, the window</div></div>
+        </div>
+        <p>Legacy and interface complexity set the real pace — not the roadmap. Decide once where speed matters and where it does not.</p>
+        <div class="v-bar"><i style="width:70%;background:linear-gradient(90deg,#fcd34d,#fef3c7)"></i></div>
+        <div class="v-scale"><span>Latency</span><span>Weekly clock</span></div>
+      </div>
+      <div class="vcard">
+        <div class="v-top">
+          <div class="v-ring" style="background:rgba(94,234,212,.18);border:1px solid rgba(94,234,212,.6);color:#99f6e4">C</div>
+          <div><h4>Control</h4><div class="v-sub">Resilience, compliance, sovereignty</div></div>
+        </div>
+        <p>Only visible when it fails, and therefore under-funded by default. Translate regulation into architecture principles so control is designed in.</p>
+        <div class="v-bar"><i style="width:60%;background:linear-gradient(90deg,#5eead4,#ccfbf1)"></i></div>
+        <div class="v-scale"><span>Assurance</span><span>Annual clock</span></div>
+      </div>
+      <div class="vcard">
+        <div class="v-top">
+          <div class="v-ring" style="background:rgba(240,171,252,.18);border:1px solid rgba(240,171,252,.6);color:#f5d0fe">A</div>
+          <div><h4>Adaptability</h4><div class="v-sub">Exit paths, substitutable components, optionality</div></div>
+        </div>
+        <p>Optionality costs today and pays off in futures that may not arrive. Treat exit and portability as design requirements, not contract clauses.</p>
+        <div class="v-bar"><i style="width:50%;background:linear-gradient(90deg,#f0abfc,#fae8ff)"></i></div>
+        <div class="v-scale"><span>Optionality</span><span>Multi-year clock</span></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 3 · three equations -->
+    <h3>The three equations</h3>
+    <p style="color:var(--muted);font-size:13.5px;margin-bottom:16px">Three questions, each asking for something different from the same four dimensions.</p>
+    <div class="grid g3">
+      <div class="vcard" style="border-top:2px solid #8bb4ff">
+        <div class="v-top"><div class="v-ring" style="background:rgba(139,180,255,.16);border:1px solid rgba(139,180,255,.55);color:#bfd4ff">I</div><div><h4>Transformation</h4><div class="v-sub">Where do we accelerate?</div></div></div>
+        <p>Legacy complexity, regulatory obligations and limited resources slow the organisation down. The question is where speed is worth buying — and where it is not.</p>
+        <p style="margin-top:10px;font-size:12px;color:var(--muted)"><b style="color:#bfd4ff">Test:</b> does the change remove a dependency, or add one?</p>
+      </div>
+      <div class="vcard" style="border-top:2px solid #5eead4">
+        <div class="v-top"><div class="v-ring" style="background:rgba(94,234,212,.16);border:1px solid rgba(94,234,212,.55);color:#99f6e4">II</div><div><h4>Resilience</h4><div class="v-sub">What happens when it fails?</div></div></div>
+        <p>Even when your own IT is running, the systems you depend on can fail — identity, cloud regions, network, payments. Disruption increasingly starts outside the boundary.</p>
+        <p style="margin-top:10px;font-size:12px;color:var(--muted)"><b style="color:#99f6e4">Test:</b> would our dashboard stay green while the business is down?</p>
+      </div>
+      <div class="vcard" style="border-top:2px solid #f0abfc">
+        <div class="v-top"><div class="v-ring" style="background:rgba(240,171,252,.16);border:1px solid rgba(240,171,252,.55);color:#f5d0fe">III</div><div><h4>Leadership</h4><div class="v-sub">Who owns the trade-off?</div></div></div>
+        <p>When value, speed and control point in different directions, someone must be accountable for the residual risk — and everyone must know who that is.</p>
+        <p style="margin-top:10px;font-size:12px;color:var(--muted)"><b style="color:#f5d0fe">Test:</b> can you name the person who may say stop — and the clock they must answer on?</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 4 · holo lens -->
+    <h3>Four perspectives, one lens</h3>
+    <p style="color:var(--muted);font-size:13.5px;margin-bottom:16px">Every seat looks at the same equation. Click a perspective to see how it reads the dilemma.</p>
+    <div class="holo">
+      <div class="holo-grid">
+        <div class="holo-col" id="holoLeft"></div>
+        <div class="holo-core">
+          <div>
+            <div class="c-kicker">Shared object</div>
+            <div class="c-title">The New Enterprise Equation</div>
+            <div class="c-sub">Value × Speed × Control</div>
+          </div>
+        </div>
+        <div class="holo-col" id="holoRight"></div>
+      </div>
+      <div class="holo-legend">
+        <span><i style="background:#8bb4ff"></i>CIO</span>
+        <span><i style="background:#5eead4"></i>CISO</span>
+        <span><i style="background:#fcd34d"></i>Finance</span>
+        <span><i style="background:#f0abfc"></i>Architecture</span>
+      </div>
+      <p class="holo-note">None of the four holds the answer alone. The equation only becomes solvable when the perspectives are projected onto the same object — and architecture is the discipline that keeps them there.</p>
+    </div>
+
+    <div class="divider"></div>
+    <div class="quote">Value without speed is a museum. Speed without control is a gamble. Control without value is a cost centre. <span>Take this map into your own organisation — and ask which factor is closest to zero.</span></div>
+  </section>
+
+  <!-- ================= DIMENSIONS ================= -->
+  <section class="panel" id="dimensions" role="tabpanel">
+    <div class="panel-head">
+      <div class="eyebrow">Tab 02 · Alignment</div>
+      <h2>Four dimensions, three equations</h2>
+      <p>The same four dimensions recur in every equation — only the question changes. Click a dimension to see how it behaves under value, speed and control.</p>
+    </div>
+
+    <div style="margin-bottom:22px" id="dimChips"></div>
+    <div class="grid g3" id="dimCards"></div>
+
+    <div class="divider"></div>
+
+    <h3>The alignment matrix</h3>
+    <p style="color:var(--muted);font-size:13.5px;margin-bottom:14px">Where each dimension creates tension (▲) and where it creates leverage (●).</p>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:13.5px;min-width:620px">
+        <thead>
+          <tr style="text-align:left;color:var(--muted);font-size:11px;letter-spacing:.14em;text-transform:uppercase">
+            <th style="padding:12px 10px;border-bottom:1px solid rgba(226,231,241,.2)">Dimension</th>
+            <th style="padding:12px 10px;border-bottom:1px solid rgba(226,231,241,.2)">I · Transformation</th>
+            <th style="padding:12px 10px;border-bottom:1px solid rgba(226,231,241,.2)">II · Resilience</th>
+            <th style="padding:12px 10px;border-bottom:1px solid rgba(226,231,241,.2)">III · Leadership</th>
+          </tr>
+        </thead>
+        <tbody id="matrixBody" style="color:var(--line)"></tbody>
+      </table>
+    </div>
+
+    <div class="quote" style="margin-top:34px">Value without speed is a museum. Speed without control is a gamble. Control without value is a cost centre. <span>The equation only works when all three are designed together.</span></div>
+  </section>
+
+  <!-- ================= CIO ================= -->
+  <section class="panel" id="cio" role="tabpanel">
+    <div class="panel-head">
+      <div class="eyebrow">Perspective 1 · CIO / Digitalisation</div>
+      <h2>"Where do we accelerate — and what do we simplify first?"</h2>
+      <p>The CIO owns the transformation agenda and the portfolio. The dilemma lands here first: every acceleration request and every control request draws on the same delivery capacity.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="num">Signature question · I</div>
+        <h3>When is architectural redesign essential, rather than adding another technology layer?</h3>
+        <p>Transformation that only adds tools automates existing work. The test: does the change remove a dependency, or add one?</p>
+      </div>
+      <div class="card">
+        <div class="num">Signature question · II</div>
+        <h3>Which external failures would stop us, even if our own IT is running?</h3>
+        <p>Identity providers, cloud regions, network, payment, logistics, public transport — the CIO's own dashboard is green while the business is down.</p>
+      </div>
+      <div class="card">
+        <div class="num">Signature question · III</div>
+        <h3>What is our one transformation or simplification priority?</h3>
+        <p>Not a list. One. The thing that, if done, makes the rest easier.</p>
+      </div>
+      <div class="card light">
+        <div class="num">The CIO's tension</div>
+        <h3>Portfolio gravity</h3>
+        <p>Legacy, compliance and resilience consume the majority of budget and capacity; innovation gets what is left. Without deliberate portfolio choices, the "transformation" line item slowly becomes maintenance.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="split">
+      <div>
+        <h3>What good looks like</h3>
+        <ul style="margin-left:18px;color:var(--soft);font-size:14.5px">
+          <li>A named <b>portfolio split</b> (optimise / transform / reinvent) that leadership has agreed to, not a wish list</li>
+          <li><b>Reuse before buy before build</b> as an operational rule, not a principle on a poster</li>
+          <li>A <b>dependency map</b> that includes parties outside the enterprise</li>
+          <li>One <b>simplification</b> per year that actually removes something</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="num">Practical examples</div>
+        <h3>Patterns seen in practice</h3>
+        <ul>
+          <li>Application rationalisation: kill the quick wins, project-manage the rest</li>
+          <li>AI as a capability under governance, not a shadow channel per department</li>
+          <li>Central software catalogue: reuse → buy → build</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CISO ================= -->
+  <section class="panel" id="ciso" role="tabpanel">
+    <div class="panel-head">
+      <div class="eyebrow">Perspective 2 · CISO / Security</div>
+      <h2>"What must never fail — and who may say stop?"</h2>
+      <p>Security is asked to enable speed and guarantee control at the same time. The honest answer is that it can do the first only if leadership accepts a defined risk appetite for the second.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="num">Signature question · I</div>
+        <h3>How does the duty to protect data change the speed and priorities of transformation?</h3>
+        <p>Protection is not a brake on transformation; it is a constraint on the sequence. The question is who decides the sequence.</p>
+      </div>
+      <div class="card">
+        <div class="num">Signature question · II</div>
+        <h3>Which services must be restored first — and how do we coordinate with others?</h3>
+        <p>Disruption by design, not for profit, changes the threat model: availability and integrity come before confidentiality.</p>
+      </div>
+      <div class="card">
+        <div class="num">Signature question · III</div>
+        <h3>Should security have authority to stop a programme?</h3>
+        <p>Or challenge and escalate while leadership retains accountability? Both are defensible; ambiguity is not.</p>
+      </div>
+      <div class="card light">
+        <div class="num">The CISO's tension</div>
+        <h3>Control that adds complexity</h3>
+        <p>Every control has a cost in friction, exceptions and shadow work. Controls that cannot show a risk reduction become the reason people route around them.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="split">
+      <div>
+        <h3>What good looks like</h3>
+        <ul style="margin-left:18px;color:var(--soft);font-size:14.5px">
+          <li>A written <b>risk appetite</b> that finance and the board have signed, not a security document</li>
+          <li><b>Escalation with a clock</b>: challenge, decide, record — no silent vetoes</li>
+          <li>Resilience tested against <b>third-party and public-infrastructure</b> failure, not only own-IT outages</li>
+          <li>Controls with a <b>sunset date</b> unless they demonstrably reduce risk</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="num">Practical examples</div>
+        <h3>Patterns seen in practice</h3>
+        <ul>
+          <li>Regulation as competitive variable: compliance as a differentiator, not only a cost</li>
+          <li>Privileged access: policy that people can actually follow beats policy that they work around</li>
+          <li>Graceful degradation designed in advance, not improvised during an incident</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FINANCE ================= -->
+  <section class="panel" id="finance" role="tabpanel">
+    <div class="panel-head">
+      <div class="eyebrow">Perspective 3 · Finance</div>
+      <h2>"How do we fund both innovation and preparedness?"</h2>
+      <p>Finance is asked to compare a certain cost today with an uncertain avoidance tomorrow. The dilemma is not whether resilience has value, but how to account for value that shows up as something that did not happen.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="num">Signature question · I</div>
+        <h3>How should we prioritise when innovation, compliance and resilience compete?</h3>
+        <p>Three different clocks: quarterly value, annual assurance, multi-year preparedness. One budget cycle cannot hold all three without explicit rules.</p>
+      </div>
+      <div class="card">
+        <div class="num">Signature question · II</div>
+        <h3>How do we evaluate preparedness for interruptions from outside the organisation?</h3>
+        <p>Expected loss, tolerance thresholds and insurance logic — applied to technology dependencies as well as assets.</p>
+      </div>
+      <div class="card">
+        <div class="num">Signature question · III</div>
+        <h3>What is our one financial discipline?</h3>
+        <p>A rule that makes the balance between innovation and risk explicit, and repeatable.</p>
+      </div>
+      <div class="card light">
+        <div class="num">Finance's tension</div>
+        <h3>The invisible benefit</h3>
+        <p>Resilience is only visible when it is missing. That asymmetry structurally disadvantages preparedness in any budget contest decided on measurable return.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="split">
+      <div>
+        <h3>What good looks like</h3>
+        <ul style="margin-left:18px;color:var(--soft);font-size:14.5px">
+          <li>A separate <b>resilience envelope</b>, not a line item that competes with growth</li>
+          <li><b>Stage-gated funding</b>: small bets released on evidence, not annual big-bang approvals</li>
+          <li>Dependency concentration as a <b>risk metric</b> with a threshold (e.g. no single provider above X% of critical capability)</li>
+          <li>Kill criteria agreed <b>before</b> the investment starts</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="num">Practical examples</div>
+        <h3>Patterns seen in practice</h3>
+        <ul>
+          <li>Portfolio funding with a fixed share for reinvention, protected from reallocation</li>
+          <li>Sovereignty premium expressed as cost per unit of strategic risk removed</li>
+          <li>Total cost of dependency, not only licence cost</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ARCHITECTURE ================= -->
+  <section class="panel" id="architecture" role="tabpanel">
+    <div class="panel-head">
+      <div class="eyebrow">Perspective 4 · Architecture</div>
+      <h2>"Can architecture be the third option?"</h2>
+      <p>Between "move fast" and "no" there is a third answer: redesign the dependency so the trade-off disappears. Architecture is the discipline that turns a dilemma into a design question.</p>
+    </div>
+
+    <div class="quote">Architecture is the place where value, speed and control are not played off against each other, but <span>deliberately distributed</span>. Not everything needs to be fast. Not everything needs to be controlled. But you must know <span>what belongs where</span> — and that is an architectural choice, not a budget choice.</div>
+
+    <div class="grid g2">
+      <div class="card">
+        <div class="num">Signature question · I</div>
+        <h3>When is architectural redesign essential instead of another layer?</h3>
+        <p>Another layer buys time and adds coupling. Redesign removes the constraint. The question is which of the two you are paying for.</p>
+      </div>
+      <div class="card">
+        <div class="num">Signature question · II</div>
+        <h3>How do we design for disruption across interconnected systems?</h3>
+        <p>Graceful degradation, bounded blast radius, substitutable components and explicit dependency contracts.</p>
+      </div>
+      <div class="card">
+        <div class="num">Signature question · III</div>
+        <h3>Which architecture principle or critical dependency do we address in 90 days?</h3>
+        <p>One principle. One dependency. Chosen because it unlocks the most other decisions.</p>
+      </div>
+      <div class="card light">
+        <div class="num">Architecture's tension</div>
+        <h3>Sovereignty is a property of the architecture, not of the contract</h3>
+        <p>A contract that says "you may switch" is worthless if the data, identities, logs and knowledge make switching practically impossible. Exit is an architectural feature.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="split">
+      <div>
+        <h3>What good looks like</h3>
+        <ul style="margin-left:18px;color:var(--soft);font-size:14.5px">
+          <li><b>Decision-ready architecture</b>: options with costs, risks and exit paths — not diagrams</li>
+          <li><b>Explicit dependency register</b> with criticality, substitutability and switch cost</li>
+          <li><b>Separation of concerns</b>: infrastructure, application and data layers with their own sovereignty and speed profiles</li>
+          <li>Architecture involved <b>at the start</b>, with a mandate — not at the end, as a review gate</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="num">Practical examples</div>
+        <h3>Patterns seen in practice</h3>
+        <ul>
+          <li>AI: a sovereign model layer as a third layer next to the productivity channel and own infrastructure — complementary, not competing</li>
+          <li>Rationalisation: one model (capabilities, applications, contracts) instead of four spreadsheets</li>
+          <li>Compliance translated into architecture principles, so it is designed in rather than audited on</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="card" style="border-color:rgba(226,231,241,.3)">
+      <div class="num">Closing · 90 days</div>
+      <h3>The third option in one sentence</h3>
+      <p style="font-size:16px;color:var(--white);opacity:.95">"We will not choose between speed and control — we will redesign the one dependency that forces the choice, and we will know within 90 days whether it worked."</p>
+    </div>
+  </section>
+
+  <!-- ================= ASSESSMENT ================= -->
+  <section class="panel" id="assessment" role="tabpanel">
+    <div class="panel-head">
+      <div class="eyebrow">Tab 07 · Self-assessment</div>
+      <h2>Where does your organisation stand?</h2>
+      <p>Four disciplines, five questions each. Answer on a three-point scale — it takes about five minutes. You get a maturity score per discipline, an overall score and a concrete place to start.</p>
+    </div>
+
+    <div class="assess-actions" style="margin:0 0 18px">
+      <button class="primary" id="aScroll">Start the assessment ↓</button>
+      <button id="aReset">Reset all answers</button>
+    </div>
+
+    <div class="assess-grid" id="assessGrid"></div>
+
+    <div class="result" id="resultBox" aria-live="polite">
+      <div class="r-top">
+        <div>
+          <div class="r-title">Overall maturity</div>
+          <div class="r-big" id="overallNum">— <small>/ 100</small></div>
+          <div class="r-band" id="overallBand">Answer the questions to see your score</div>
+        </div>
+        <div class="bars" id="resultBars"></div>
+      </div>
+      <div class="start" id="startBox">
+        <div class="s-kicker">Where to start</div>
+        <h4>Your starting point appears here</h4>
+        <p>Complete the questions in any discipline. The app looks for the lowest-scoring discipline — the one most likely to be the constraint on the whole equation — and suggests the first move.</p>
+      </div>
+      <p class="footnote" style="margin-top:16px">This is a conversation instrument, not an audit. It is designed to surface where the four seats disagree, not to produce a certification grade.</p>
+    </div>
+  </section>
+
+</main>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('nav.tabs button'));
+  var panels=[].slice.call(document.querySelectorAll('.panel'));
+  function show(id){
+    tabs.forEach(function(b){b.setAttribute('aria-selected', String(b.dataset.tab===id));});
+    panels.forEach(function(p){p.classList.toggle('active', p.id===id);});
+    document.body.classList.toggle('compact', id!=='general');
+    if(history.replaceState){history.replaceState(null,'','#'+id);}
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  tabs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.tab);});});
+  var initial=(location.hash||'').replace('#','');
+  if(initial && document.getElementById(initial)){show(initial);}
+  document.addEventListener('keydown',function(e){
+    var i=tabs.findIndex(function(b){return b.getAttribute('aria-selected')==='true';});
+    if(e.key==='ArrowRight'&&i>-1){show(tabs[(i+1)%tabs.length].dataset.tab);}
+    if(e.key==='ArrowLeft'&&i>-1){show(tabs[(i-1+tabs.length)%tabs.length].dataset.tab);}
+  });
+
+  var dims=[
+    {id:'value',label:'Value',short:'What the organisation produces that someone would pay for, or that society depends on.',
+     trans:'Genuine value versus tool accumulation: does the change alter how work is done, or only how it is recorded?',
+     resil:'Value at risk: which capabilities, if unavailable, stop delivering value within hours?',
+     lead:'Who can say that a value claim is credible — and what evidence is required before funding?',
+     tension:'Value is measured quarterly; the enablers of value take years.',
+     leverage:'Make value claims explicit and testable before investment.'},
+    {id:'speed',label:'Speed',short:'Time-to-value, decision latency and the ability to adopt before the window closes.',
+     trans:'Where does legacy and interface complexity set the real pace — not the roadmap?',
+     resil:'Speed of restoration and graceful degradation versus speed of change.',
+     lead:'Who is allowed to slow down, and on what basis, without being seen as obstruction?',
+     tension:'Every control adds latency; every latency adds risk of irrelevance.',
+     leverage:'Decide once, in advance, where speed matters and where it does not.'},
+    {id:'control',label:'Control',short:'Resilience, compliance, data protection and sovereignty over critical dependencies.',
+     trans:'Compliance and security requirements as constraints on sequence, not on ambition.',
+     resil:'Continuity, recovery objectives and coordination with parties outside the enterprise.',
+     lead:'Accountability: who owns the residual risk when control is traded for speed?',
+     tension:'Control is only visible when it fails; it is therefore under-funded by default.',
+     leverage:'Translate regulation into architecture principles so control is designed in.'},
+    {id:'adaptability',label:'Adaptability',short:'The freedom to change course: exit paths, substitutable components, optionality.',
+     trans:'Can we replatform without a multi-year programme?',
+     resil:'Can we degrade, reroute and recover without redesigning?',
+     lead:'Who may change the strategy, and how quickly, without renegotiating everything?',
+     tension:'Optionality costs today and pays off in futures that may not arrive.',
+     leverage:'Treat exit and portability as design requirements, not contract clauses.'}
+  ];
+  var chips=document.getElementById('dimChips');
+  var cards=document.getElementById('dimCards');
+  function renderDim(active){
+    chips.innerHTML=dims.map(function(d){
+      return '<button class="tag'+(d.id===active?' on':'')+'" data-dim="'+d.id+'">'+d.label+'</button>';
+    }).join('');
+    var d=dims.filter(function(x){return x.id===active;})[0];
+    cards.innerHTML=
+      '<div class="card"><div class="num">Dimension</div><h3>'+d.label+'</h3><p>'+d.short+'</p></div>'+
+      '<div class="card"><div class="num">I · Transformation</div><h3>'+d.label+' &amp; change</h3><p>'+d.trans+'</p></div>'+
+      '<div class="card"><div class="num">II · Resilience</div><h3>'+d.label+' &amp; disruption</h3><p>'+d.resil+'</p></div>'+
+      '<div class="card"><div class="num">III · Leadership</div><h3>'+d.label+' &amp; accountability</h3><p>'+d.lead+'</p></div>'+
+      '<div class="card tension"><div class="num">Tension</div><h3>Where it hurts</h3><p>'+d.tension+'</p></div>'+
+      '<div class="card leverage"><div class="num">Leverage</div><h3>Where it helps</h3><p>'+d.leverage+'</p></div>';
+    [].slice.call(chips.querySelectorAll('button')).forEach(function(b){
+      b.addEventListener('click',function(){renderDim(b.dataset.dim);});
+    });
+  }
+  renderDim('value');
+
+  /* ---------- overview: holo lens of the four perspectives ---------- */
+  var persps=[
+    {id:'cio',name:'CIO / Digitalisation',role:'Where to accelerate, what to simplify',color:'#8bb4ff',
+     read:'Sees the equation as a portfolio problem: the same delivery capacity funds growth, compliance and resilience. Reads the dilemma as "which dependency do we remove first?"'},
+    {id:'ciso',name:'CISO / Security',role:'What must never fail, who may stop',color:'#5eead4',
+     read:'Sees the equation as a risk-appetite problem: speed is only legitimate once leadership has written down what it is willing to lose, and who may call stop.'},
+    {id:'finance',name:'Finance',role:'How to fund both innovation and preparedness',color:'#fcd34d',
+     read:'Sees the equation as an asymmetry problem: resilience only shows up as a cost that did not happen. Reads the dilemma as "how do we price the invisible?"'},
+    {id:'arch',name:'Architecture',role:'The third option between speed and "no"',color:'#f0abfc',
+     read:'Sees the equation as a design problem: the trade-off exists because of a coupling. Redesign the dependency and the equation stops competing with itself.'}
+  ];
+  var leftEl=document.getElementById('holoLeft');
+  var rightEl=document.getElementById('holoRight');
+  var openId='arch';
+  function perspHTML(p){
+    return '<button class="persp" data-p="'+p.id+'" aria-pressed="'+(p.id===openId)+'" style="--p-c:'+p.color+'">'+
+      '<span class="p-head"><span class="p-dot"></span><span class="p-name">'+p.name+'</span></span>'+
+      '<span class="p-role">'+p.role+'</span>'+
+      '<span class="p-read">'+p.read+'</span>'+
+    '</button>';
+  }
+  function renderHolo(){
+    leftEl.innerHTML=persps.slice(0,2).map(perspHTML).join('');
+    rightEl.innerHTML=persps.slice(2).map(perspHTML).join('');
+    [].slice.call(document.querySelectorAll('.persp')).forEach(function(b){
+      b.addEventListener('click',function(){
+        openId=(openId===b.dataset.p)?'':b.dataset.p;
+        renderHolo();
+      });
+    });
+  }
+  renderHolo();
+
+
+
+  /* ---------- assessment ---------- */
+  var disciplines=[
+    {id:'tech',name:'Technology',icon:'⚙',color:'var(--c-general)',sub:'CIO / Digitalisation',
+     q:['We know which critical capabilities depend on a single external provider.',
+        'New capability can be delivered in weeks, not quarters.',
+        'We have a named portfolio split between optimise, transform and reinvent.',
+        'AI is governed centrally instead of bought per department.',
+        'We have removed something (an application, a dependency) in the last year.'],
+     start:'Technology is the constraint. Start with the dependency map — one page, including parties outside the enterprise — and pick the single external dependency that would stop the business while your own dashboard stays green.'},
+    {id:'biz',name:'Business',icon:'◆',color:'var(--c-cio)',sub:'Value & adoption',
+     q:['Every major initiative has a named business owner, not only an IT sponsor.',
+        'Value claims are made testable before funding is released.',
+        'Business and IT agree on what "faster" means in measurable terms.',
+        'Adoption is measured after go-live, not only delivery.',
+        'The board can explain the enterprise equation in its own words.'],
+     start:'Business is the constraint. Start by making one value claim testable — pick the largest initiative and write down, in one paragraph, what evidence would prove it worked.'},
+    {id:'fin',name:'Finance',icon:'€',color:'var(--c-finance)',sub:'Funding & risk pricing',
+     q:['Resilience has its own budget envelope, protected from reallocation.',
+        'Funding is released in stages on evidence, not in one annual approval.',
+        'Dependency concentration is tracked as a risk metric with a threshold.',
+        'Kill criteria are agreed before an investment starts.',
+        'Cost of a dependency includes switching cost, not only licence cost.'],
+     start:'Finance is the constraint. Start with a separate resilience envelope and one threshold: no single provider above X% of a critical capability. That turns an invisible benefit into a number.'},
+    {id:'risk',name:'Risk',icon:'◎',color:'var(--c-ciso)',sub:'CISO / Resilience',
+     q:['A written risk appetite has been signed by the board and finance.',
+        'Escalation has a clock: challenge, decide, record — no silent vetoes.',
+        'Resilience is tested against third-party and public-infrastructure failure.',
+        'Every control has a sunset date unless it demonstrably reduces risk.',
+        'Graceful degradation is designed in advance, not improvised in an incident.'],
+     start:'Risk is the constraint. Start with the risk appetite — one page, signed by the board, stating what the organisation is willing to lose and who may say stop on what basis.'}
+  ];
+  var answers={};
+  var grid=document.getElementById('assessGrid');
+  var scale=['Not yet','Partly','In place'];
+
+  function discScore(d){
+    var vals=d.q.map(function(_,i){return answers[d.id+'-'+i];});
+    var done=vals.filter(function(v){return v!==undefined;});
+    if(!done.length){return null;}
+    var sum=done.reduce(function(a,b){return a+b;},0);
+    return Math.round(sum/(done.length*2)*100);
+  }
+  function band(s){
+    if(s===null){return 'Not scored';}
+    if(s>=80){return 'Leading';}
+    if(s>=55){return 'Developing';}
+    if(s>=30){return 'Emerging';}
+    return 'Exposed';
+  }
+  function renderGrid(){
+    grid.innerHTML=disciplines.map(function(d){
+      var s=discScore(d);
+      return '<div class="disc" style="--d-c:'+d.color+'">'+
+        '<div class="d-head"><div class="d-ic">'+d.icon+'</div>'+
+          '<div><h4>'+d.name+'</h4><span class="d-sub">'+d.sub+'</span></div>'+
+          '<div class="d-score">Score<b>'+(s===null?'—':s+'%')+'</b></div>'+
+        '</div>'+
+        d.q.map(function(q,i){
+          var cur=answers[d.id+'-'+i];
+          return '<div class="q"><span class="q-txt"><span class="q-n">'+(i+1)+'.</span>'+q+'</span>'+
+            '<div class="opts">'+scale.map(function(lbl,v){
+              return '<input type="radio" id="'+d.id+i+'v'+v+'" name="'+d.id+i+'" value="'+v+'"'+(cur===v?' checked':'')+'>'+
+                     '<label for="'+d.id+i+'v'+v+'">'+lbl+'</label>';
+            }).join('')+'</div></div>';
+        }).join('')+
+      '</div>';
+    }).join('');
+    [].slice.call(grid.querySelectorAll('input[type=radio]')).forEach(function(inp){
+      inp.addEventListener('change',function(){
+        var name=inp.name;
+        var d=disciplines.filter(function(x){return name.indexOf(x.id)===0;})[0];
+        var idx=name.slice(d.id.length);
+        answers[d.id+'-'+idx]=+inp.value;
+        renderGrid(); renderResult();
+      });
+    });
+  }
+  function renderResult(){
+    var scored=disciplines.map(function(d){return {d:d,s:discScore(d)};});
+    var all=[].concat.apply([],disciplines.map(function(d){
+      return d.q.map(function(_,i){return answers[d.id+'-'+i];}).filter(function(v){return v!==undefined;});
+    }));
+    var overall=all.length?Math.round(all.reduce(function(a,b){return a+b;},0)/(all.length*2)*100):null;
+    document.getElementById('overallNum').innerHTML=(overall===null?'—':overall)+' <small>/ 100</small>';
+    document.getElementById('overallBand').textContent=overall===null?'Answer the questions to see your score':'Maturity band: '+band(overall);
+    document.getElementById('resultBars').innerHTML=scored.map(function(o){
+      var w=o.s===null?0:o.s;
+      return '<div class="bar-row" style="--b-c:'+o.d.color+'"><span class="bl">'+o.d.name+'</span>'+
+        '<span class="bt"><i style="width:'+w+'%"></i></span>'+
+        '<span class="bv">'+(o.s===null?'—':o.s)+'</span></div>';
+    }).join('');
+
+    var complete=scored.filter(function(o){return o.s!==null;});
+    var box=document.getElementById('startBox');
+    if(!complete.length){
+      box.innerHTML='<div class="s-kicker">Where to start</div><h4>Your starting point appears here</h4>'+
+        '<p>Complete the questions in any discipline. The app looks for the lowest-scoring discipline — the one most likely to be the constraint on the whole equation — and suggests the first move.</p>';
+      return;
+    }
+    var lowest=complete.slice().sort(function(a,b){return a.s-b.s;})[0];
+    var highest=complete.slice().sort(function(a,b){return b.s-a.s;})[0];
+    box.innerHTML='<div class="s-kicker">Where to start</div>'+
+      '<h4>'+lowest.d.name+' — '+band(lowest.s)+' ('+lowest.s+'%)</h4>'+
+      '<p>'+lowest.d.start+'</p>'+
+      '<p class="s-next">Strength to build on: <b style="color:var(--white)">'+highest.d.name+'</b> ('+highest.s+'%). Use it as the anchor when you frame the 90-day decision.</p>';
+  }
+  document.getElementById('aReset').addEventListener('click',function(){
+    answers={}; renderGrid(); renderResult();
+  });
+  document.getElementById('aScroll').addEventListener('click',function(){
+    grid.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+  var gotoBtn=document.getElementById('gotoAssessment');
+  if(gotoBtn){
+    gotoBtn.addEventListener('click',function(){
+      var t=document.querySelector('nav.tabs button[data-tab="assessment"]');
+      if(t){t.click();}
+    });
+  }
+  renderGrid(); renderResult();
+
+  var body=document.getElementById('matrixBody');
+  body.innerHTML=dims.map(function(d){
+    return '<tr>'+
+      '<td style="padding:14px 10px;border-bottom:1px solid rgba(226,231,241,.1);font-weight:600">'+d.label+'</td>'+
+      '<td style="padding:14px 10px;border-bottom:1px solid rgba(226,231,241,.1);">'+d.trans+'</td>'+
+      '<td style="padding:14px 10px;border-bottom:1px solid rgba(226,231,241,.1);">'+d.resil+'</td>'+
+      '<td style="padding:14px 10px;border-bottom:1px solid rgba(226,231,241,.1);">'+d.lead+'</td>'+
+    '</tr>';
+  }).join('');
+})();
+</script>
+</body>
+</html>
